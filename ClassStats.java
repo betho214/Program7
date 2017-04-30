@@ -109,7 +109,6 @@ public class ClassStats
             System.out.printf("%-14s%4.0f\n", classAssignments[6], classList.get(0).getFinal1());
 
           }
-
           else if (input.substring(0,7).equalsIgnoreCase("search "))
           {
             String partialName = input.substring(7);
@@ -202,11 +201,11 @@ public class ClassStats
 
             System.out.println(assignment +":" + classAssignments.get(0).getAssignmentPoints(index));
             System.out.println("Grade breakdown");
-            System.out.println("A: " +);
-            System.out.println("B: " +);
-            System.out.println("C: " +);
-            System.out.println("D: " +);
-            System.out.println("F: " +);
+            System.out.println("A: " );
+            System.out.println("B: " );
+            System.out.println("C: " );
+            System.out.println("D: " );
+            System.out.println("F: " );
           }
         }
       }
