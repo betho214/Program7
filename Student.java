@@ -21,11 +21,11 @@ public class Student
     assignmentPoints[3] = t2;
     assignmentPoints[4] = f1;
     assignmentPoints[5] = (e1 + t1 + e2 + t2 + f1);
-    if(totalPoints >= 90 ){ gradeLetter = 'A';}
-    else if(totalPoints >= 80){ gradeLetter = 'B';}
-    else if(totalPoints >= 70){ gradeLetter = 'C';}
-    else if(totalPoints >= 60){ gradeLetter = 'D';}
-    else if(totalPoints < 60){ gradeLetter = 'F';}
+    if(assignmentPoints[5] >= 90 ){ gradeLetter = 'A';}
+    else if(assignmentPoints[5] >= 80){ gradeLetter = 'B';}
+    else if(assignmentPoints[5] >= 70){ gradeLetter = 'C';}
+    else if(assignmentPoints[5] >= 60){ gradeLetter = 'D';}
+    else if(assignmentPoints[5] < 60){ gradeLetter = 'F';}
   }
   public String getFirstName() {
     return firstName;
@@ -71,9 +71,6 @@ public class Student
   }
   public double getAssignmentPoints(int index) {
     return assignments[index-2];
-  }
-  public double setAssignmentPoints() {
-    assignmentPoints[index-2];
   }
 
   public int getTP() { return assignmentPoints[5];}
