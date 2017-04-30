@@ -70,7 +70,7 @@ public class Student
     assignmentPoints[4] = f1;
   }
   public double getAssignmentPoints(int index) {
-    return assignments[index-2];
+    return assignmentPoints[index-2];
   }
 
   public int getTP() { return assignmentPoints[5];}
