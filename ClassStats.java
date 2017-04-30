@@ -11,6 +11,7 @@ public class ClassStats
     public int percentage = 0;
     public int average = 0;
     public int total = 0;
+    public int index = 0;
 
     public void sortClass()
     {
@@ -194,18 +195,19 @@ public class ClassStats
           {
             String assignment = input.substring(11);
 
-            for(int i = 2; i<classAssignments.length; i++)
+            for(index = 2; index<classAssignments.length; index++)
             {
-              if(classAssignments[i].equals(assignment))
-              {
-               //int[] assignmentPoints = new int[classList.get(0).length];
-               //assignmentPoints = classList.get(0);
-               //assignmentPointsNew = assignmentPoints.split(",");
-               System.out.println(assignment +":" + classList.get(0, i));
-             }
-          }
-          }
+              if(classAssignments[index].equals(assignment)) {break;}
+            }
 
+            System.out.println(assignment +":" + classAssignments.get(0).getAssignmentPoints(index));
+            System.out.println("Grade breakdown");
+            System.out.println("A: " +);
+            System.out.println("B: " +);
+            System.out.println("C: " +);
+            System.out.println("D: " +);
+            System.out.println("F: " +);
+          }
         }
       }
       catch (FileNotFoundException e)
