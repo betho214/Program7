@@ -9,8 +9,6 @@ public class ClassStats
     public String path = "";
     public String input = "";
     public int percentage = 0;
-    public int lowPercentage = 0;
-    public int highPercentage = 0;
     public int average = 0;
     public int total = 0;
 
@@ -56,7 +54,8 @@ public class ClassStats
            average = total / totalPointsList.size();
         }
 
-        while(true){
+        while(true)
+        {
           Scanner scan = new Scanner(System.in);
           System.out.println();
           System.out.print("> ");
@@ -195,24 +194,19 @@ public class ClassStats
           {
             String assignment = input.substring(11);
 
-          for(int i = 2; i<classAssignments.length; i++)
-          {
-             if(classAssignments[i].equals(assignment))
-             {
+            for(int i = 2; i<classAssignments.length; i++)
+            {
+              if(classAssignments[i].equals(assignment))
+              {
                //int[] assignmentPoints = new int[classList.get(0).length];
                //assignmentPoints = classList.get(0);
                //assignmentPointsNew = assignmentPoints.split(",");
                System.out.println(assignment +":" + classList.get(0, i));
              }
           }
-
-
           }
 
-
         }
-
-
       }
       catch (FileNotFoundException e)
       {
