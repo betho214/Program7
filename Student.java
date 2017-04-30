@@ -73,6 +73,6 @@ public class Student
     return assignmentPoints[index-2];
   }
 
-  public int getTP() { return assignmentPoints[5];}
+  public double getTP() { return (int)assignmentPoints[5];}
   public char getLetterGrade() { return gradeLetter;}
 }
