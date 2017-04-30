@@ -199,7 +199,8 @@ public class ClassStats
               if(classAssignments[index].equals(assignment)) {break;}
             }
 
-            System.out.println(assignment +":" + classAssignments.[0].getAssignmentPoints(index));
+            System.out.print(assignment +": ");
+            System.out.printf("%1.0f\n", classList.get(0).getAssignmentPoints(index));
             System.out.println("Grade breakdown");
             System.out.println("A: " );
             System.out.println("B: " );
