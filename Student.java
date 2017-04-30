@@ -5,14 +5,9 @@ public class Student
 {
   String firstName = "";
   String lastName = "";
-  double essay1 = 0.0;
-  double test1 = 0.0;
-  double essay2 = 0.0;
-  double test2 = 0.0;
-  double final1 = 0.0;
-  int totalPoints = 0;
+  double[] assignmentPoints = {0.0,0.0,0.0,0.0,0.0,0.0};
   char gradeLetter = ' ';
-  
+
 
   public Student(String fN, String lN,
                   double e1, double t1,
@@ -20,21 +15,17 @@ public class Student
   {
     firstName = fN;
     lastName = lN;
-    essay1 = e1;
-    test1 = t1;
-    essay2 = e2;
-    test2 = t2;
-    final1 = f1;
-
-    totalPoints = (int)(e1 + t1 + e2 + t2 + f1);
+    assignmentPoints[0] = e1;
+    assignmentPoints[1] = t1;
+    assignmentPoints[2] = e2;
+    assignmentPoints[3] = t2;
+    assignmentPoints[4] = f1;
+    assignmentPoints[5] = (e1 + t1 + e2 + t2 + f1);
     if(totalPoints >= 90 ){ gradeLetter = 'A';}
     else if(totalPoints >= 80){ gradeLetter = 'B';}
     else if(totalPoints >= 70){ gradeLetter = 'C';}
     else if(totalPoints >= 60){ gradeLetter = 'D';}
     else if(totalPoints < 60){ gradeLetter = 'F';}
-
-
-
   }
   public String getFirstName() {
     return firstName;
@@ -49,36 +40,42 @@ public class Student
     lastName = lN;
   }
   public double getEssay1() {
-    return essay1;
+    return assignmentPoints[0];
   }
   public void setEssay1(double e1){
-    essay1 = e1;
+    assignmentPoints[0] = e1;
   }
   public double getTest1() {
-    return test1;
+    return assignmentPoints[1]; //return test1;
   }
-  public void setTest1(double t1){
-    test1 = t1;
+  public void setTest1(double t1) {
+    assignmentPoints[1] = t1;
   }
   public double getEssay2() {
-    return essay2;
+    return assignmentPoints[2];
   }
-  public void setEssay2(double e2){
-    essay2 = e2;
+  public void setEssay2(double e2) {
+    assignmentPoints[2] = e2;
   }
   public double getTest2() {
-    return test2;
+    return assignmentPoints[3];
   }
-  public void setTest2(double t2){
-    test2 = t2;
+  public void setTest2(double t2) {
+    assignmentPoints[3] = t2;
   }
   public double getFinal1() {
-    return final1;
+    return assignmentPoints[4];
   }
-  public void setFinal1(double f1){
-    final1 = f1;
+  public void setFinal1(double f1) {
+    assignmentPoints[4] = f1;
+  }
+  public double getAssignmentPoints(int index) {
+    return assignments[index-2];
+  }
+  public double setAssignmentPoints() {
+    assignmentPoints[index-2];
   }
 
-  public int getTP() { return totalPoints;}
+  public int getTP() { return assignmentPoints[5];}
   public char getLetterGrade() { return gradeLetter;}
 }
