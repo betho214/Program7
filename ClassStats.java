@@ -110,7 +110,7 @@ public class ClassStats
 
           }
 
-          /*else if (input.substring(0,7).equalsIgnoreCase("search "))
+          else if (input.substring(0,7).equalsIgnoreCase("search "))
           {
             String partialName = input.substring(7);
 
@@ -131,27 +131,37 @@ public class ClassStats
               }
             }
           }
-*/
-        /*  else if (input.substring(0,8).equalsIgnoreCase("student "))
+
+          else if (input.substring(0,8).equalsIgnoreCase("student "))
           {
             String[] student = new String[input.substring(8).length()];
             student = input.substring(8).split(" ");
-
-            System.out.format("%11s%7s", "Assignments", "Points");
-            System.out.println();
-            System.out.format("%10s%7s", "-----------", "------");
-            System.out.println();
 
             for(int i = 1; i<classList.size(); i++)
             {
                 if( classList.get(i).getFirstName().equals(student[0]) &&
                     classList.get(i).getLastName().equals(student[1]))
                 {
-                  System.out.println(classList.get(i).getFirstName());
+                  System.out.println("Grades for " +
+                                      classList.get(i).getFirstName() +
+                                      " " +
+                                      classList.get(i).getLastName());
+                  System.out.println();
+
+                  System.out.format("%11s%7s%12s", "Assignments", "Points", "Possible");
+                  System.out.println();
+                  System.out.format("%10s%7s%12s", "-----------", "------", "---------");
+                  System.out.println();
+                  System.out.printf("%-14s%4.0f%12.0f\n", classAssignments[2], classList.get(i).getEssay1(), classList.get(0).getEssay1());
+                  System.out.printf("%-14s%4.0f%12.0f\n", classAssignments[3], classList.get(i).getTest1(), classList.get(0).getTest1());
+                  System.out.printf("%-14s%4.0f%12.0f\n", classAssignments[4], classList.get(i).getEssay2(), classList.get(0).getEssay2());
+                  System.out.printf("%-14s%4.0f%12.0f\n", classAssignments[5], classList.get(i).getTest2(), classList.get(0).getTest2());
+                  System.out.printf("%-14s%4.0f%12.0f\n", classAssignments[6], classList.get(i).getFinal1(), classList.get(0).getFinal1());
+
                 }
             }
           }
-          */
+
           else if(input.equalsIgnoreCase("report"))
           {
             System.out.println("Grade breakdown for Philosophy 101, Section 1");
@@ -159,9 +169,50 @@ public class ClassStats
             System.out.println("Low: " + totalPointsList.get(0) + "%");
             System.out.println("High: " + totalPointsList.get(totalPointsList.size()-1) + "%");
             System.out.println("Ave: " + average + "%");
+            System.out.println();
+
+          /*  int aGrades = 0;
+            int bGrades = 0;
+            int cGrades = 0;
+            int dGrades = 0;
+            int fGrades = 0;
+            char letterGrade = ' ';
+
+
+
+           for(int i=0; i<classList.size(); i++)
+            {
+              letterGrade = classList.get(i).getLetterGrade();
+              if (letterGrade = 'A')
+              {
+                aGrades += 1;
+              }
+            }
+            System.out.println(aGrades); */
 
           }
+          else if(input.substring(0,11).equalsIgnoreCase("assignment "))
+          {
+            String assignment = input.substring(11);
+
+          for(int i = 2; i<classAssignments.length; i++)
+          {
+             if(classAssignments[i].equals(assignment))
+             {
+               //int[] assignmentPoints = new int[classList.get(0).length];
+               //assignmentPoints = classList.get(0);
+               //assignmentPointsNew = assignmentPoints.split(",");
+               System.out.println(assignment +":" + classList.get(0, i));
+             }
+          }
+
+
+          }
+
+
         }
+
+
       }
       catch (FileNotFoundException e)
       {
