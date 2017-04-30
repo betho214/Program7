@@ -73,6 +73,10 @@ public class Student
     return assignmentPoints[index-2];
   }
 
+<<<<<<< HEAD
+  public int getTP() { return (int)assignmentPoints[5];}
+=======
   public double getTP() { return (int)assignmentPoints[5];}
+>>>>>>> origin/master
   public char getLetterGrade() { return gradeLetter;}
 }
