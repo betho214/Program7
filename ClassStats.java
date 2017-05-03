@@ -28,13 +28,15 @@ public class ClassStats
         {
           line = fileScan.nextLine();
           String[] grades = line.split(",");
-          classList.add(new Student(  grades[0], grades[1],
-                                    Double.parseDouble(grades[2]),
-                                    Double.parseDouble(grades[3]),
-                                    Double.parseDouble(grades[4]),
-                                    Double.parseDouble(grades[5]),
-                                    Double.parseDouble(grades[6]) ));
-
+          for(int i = 2; i<grades.length; i++)
+          {
+            classList.add(new Student(  grades[0], grades[1],
+                                    Double.parseDouble(grades[i])));
+                                  //  Double.parseDouble(grades[3]),
+                                  //  Double.parseDouble(grades[4]),
+                                  //  Double.parseDouble(grades[5]),
+                                  //  Double.parseDouble(grades[6]) ));
+          }
         }
         ArrayList<Integer> totalPointsList = new ArrayList<Integer>();
         for(int i = 1; i<classList.size(); i++)
@@ -241,7 +243,8 @@ public class ClassStats
             }
 
             System.out.print("\t" + assignment +": ");
-            System.out.printf("\t%1.0f\n", classList.get(0).getAssignmentPoints(index));
+            System.out.printf("%1.0f", classList.get(0).getAssignmentPoints(index));
+            System.out.print(" points\n");
             System.out.println("\tGrade breakdown");
             System.out.println("\tA: " + assignmentLetterGrades[0] );
             System.out.println("\tB: " + assignmentLetterGrades[1]);
@@ -260,9 +263,22 @@ public class ClassStats
                 System.out.println("      assignments");
                 System.out.println("      report");
                 System.out.println("      student [student name]");
-                System.out.println("      assignment [assignment name]");;
+                System.out.println("      assignment [assignment name]");
               }
         }
+      }
+      catch (StringIndexOutOfBoundsException e){
+        System.out.println("ERROR! No valid command found");
+              System.out.println("Usage: Please enter one of the following commands:");
+              System.out.println();
+              System.out.println("      exit");
+              System.out.println("      help");
+              System.out.println("      students");
+              System.out.println("      search [partial name]");
+              System.out.println("      assignments");
+              System.out.println("      report");
+              System.out.println("      student [student name]");
+              System.out.println("      assignment [assignment name]");
       }
       catch (FileNotFoundException e)
       {

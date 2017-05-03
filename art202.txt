@@ -1,0 +1,6 @@
+Art 202,Section 2,drawing,sculpture,mixed media
+firstName,lastName,40,40,20
+Mickey,Mouse,39,38,15
+Donald,Duck,30,40,18
+Goofy,Gooford,39,39,20
+Mary,Poppins,37,30,10
